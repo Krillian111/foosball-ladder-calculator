@@ -1,20 +1,15 @@
-from SinglesMatches import SinglesMatches
 from SinglesMatch import SinglesMatch
 
 class Parser:
     def parse(self, csvFileName):
         with open(csvFileName) as singlesCsvFile:
             self.skipFirstLine(singlesCsvFile)
-            matches = SinglesMatches()
+            matches = []
             for line in singlesCsvFile:
-                playerA,playerB,scoreA,scoreB = line[:-1].split(',')
-                matches.addMatch(SinglesMatch(playerA, playerB, scoreA, scoreB))
-            print(matches)
-            # for each result
-            # add win for winner with score
-            # add loss for loser with score
-            
-            # sort players for table
-            # print table
+                if line[-1] == "\n":
+                    line = line[:-1]
+                playerA,playerB,scoreA,scoreB = line.split(',')
+                matches.append(SinglesMatch(playerA, playerB, int(scoreA), int(scoreB)))
+            return matches
     def skipFirstLine(self, csvFile):
         csvFile.readline()
