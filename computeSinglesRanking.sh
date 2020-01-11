@@ -4,7 +4,7 @@ if [ -z "$1" ]
 fi
 
 if command -v python3 >/dev/null; then
-    python3 ./singles/main.py $1
+    python3 ./main_singles.py $1
 else
     echo Please install Python 3
 fi

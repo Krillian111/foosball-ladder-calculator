@@ -1,4 +1,4 @@
-from Stats import Stats
+from singles.Stats import Stats
 
 class Player:
     def __init__(self, name):

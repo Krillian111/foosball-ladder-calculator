@@ -1,4 +1,4 @@
-from Player import Player
+from singles.Player import Player
 from operator import attrgetter
 
 class Season:

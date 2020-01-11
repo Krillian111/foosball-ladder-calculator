@@ -1,4 +1,4 @@
-class SinglesMatch:
+class Match:
     def __init__(self,playerNameA,playerNameB,scoreA,scoreB):
         self.playerNameA = playerNameA
         self.playerNameB = playerNameB

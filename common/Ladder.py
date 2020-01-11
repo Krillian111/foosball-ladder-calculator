@@ -1,4 +1,4 @@
-from multiStageSort import multiStageSort
+from common.multiStageSort import multiStageSort
 
 class Ladder:
     def __init__(self, season):

@@ -1,4 +1,4 @@
-from SinglesMatch import SinglesMatch
+from singles.Match import Match
 
 class Parser:
     def parse(self, csvFileName):
@@ -9,7 +9,7 @@ class Parser:
                 if line[-1] == "\n":
                     line = line[:-1]
                 playerA,playerB,scoreA,scoreB = line.split(',')
-                matches.append(SinglesMatch(playerA, playerB, int(scoreA), int(scoreB)))
+                matches.append(Match(playerA, playerB, int(scoreA), int(scoreB)))
             return matches
     def skipFirstLine(self, csvFile):
         csvFile.readline()
