@@ -17,4 +17,7 @@ class Stats:
                 self.losses += 1
 
     def __str__(self):
-        return f"{self.playerName}\t(G: {self.wins+self.losses} | W:{self.wins} | L: {self.losses} | G(shot): {self.goalsShot} | G(rec): {self.goalsReceived})"
+        return f"{self.playerName}\t| {self.wins+self.losses}\t| {self.wins}\t| {self.losses}\t |{self.goalsShot}\t| {self.goalsReceived}\t | {round(self.wins/(self.wins+self.losses), 3)}"
+
+    def toCsv(self):
+        return ",".join(map(lambda value: str(value), [self.playerName,(self.wins+self.losses),self.wins,self.losses,self.goalsShot,self.goalsReceived, round(self.wins/(self.wins+self.losses), 2)]))

@@ -14,7 +14,14 @@ matches = Parser().parse(csvFile)
 season = Season(matches)
 ladder = Ladder(season)
 
+print("=========================")
 print(ladder)
+print("=========================")
+outputFileName = sys.argv[2]
+print('redirecting as csv to:' + str(outputFileName))
+outputFile = open(outputFileName, mode='w')
+print(ladder.toCsv(), file=outputFile)
+outputFile.close()
 
 
 
